@@ -34,7 +34,7 @@ class qtApp(QWidget):
             while result != None and result['display'] != 0:
                 for post in result['items']: # 100개의 post
                     api.get_post_data(post, outputs) # NaverApi 클래스에서 처리
-
+                
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
