@@ -75,7 +75,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="txtSearch"/>
+         <widget class="QLineEdit" name="txtSearch">
+          <property name="inputMethodHints">
+           <set>Qt::ImhNone</set>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btnSearch">
