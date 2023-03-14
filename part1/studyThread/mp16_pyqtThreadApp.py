@@ -6,6 +6,8 @@ from PyQt5.QtGui import * # QIcon은 여기 있음
 from PyQt5.QtCore import * # Qt.white...
 import time
 
+MAX = 10000
+
 class BackgroundWorker(QThread): # PyQt5 스레드를 위한 클래스 존재
     procChanged = pyqtSignal(int)
 
@@ -22,9 +24,12 @@ class BackgroundWorker(QThread): # PyQt5 스레드를 위한 클래스 존재
         #     self.parent.pgbTask.setValue(i)
         #     self.parent.txbLog.append(f'스레드 출력 > {i}')
         while self.working:
-            self.procChanged.emit(self.count) # 시그널을 내보냄
-            self.count += 1 # 값 증가만
-            time.sleep(0.0001)
+            if self.count <= MAX:
+                self.procChanged.emit(self.count) # 시그널을 내보냄
+                self.count += 1 # 값 증가만
+                time.sleep(0.001)
+            else:
+                self.working = False
 
 class qtApp(QWidget):
     def __init__(self):
@@ -38,7 +43,7 @@ class qtApp(QWidget):
         self.worker = BackgroundWorker(parent=self, count=0)
         # 백그라운드 워커에 있는 시그널을 접근 슬롯함수
         self.worker.procChanged.connect(self.procUpdated) 
-        self.pgbTask.setRange(0, 1000000)
+        self.pgbTask.setRange(0, MAX)
 
     @pyqtSlot(int)
     def procUpdated(self, count):
