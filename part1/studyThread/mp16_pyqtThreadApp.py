@@ -18,11 +18,6 @@ class BackgroundWorker(QThread): # PyQt5 스레드를 위한 클래스 존재
         self.count = count
 
     def run(self):
-        # self.parent.pgbTask.setRange(0, 100)
-        # for i in range(0, 101):
-        #     print(f'스레드 출력 > {i}')
-        #     self.parent.pgbTask.setValue(i)
-        #     self.parent.txbLog.append(f'스레드 출력 > {i}')
         while self.working:
             if self.count <= MAX:
                 self.procChanged.emit(self.count) # 시그널을 내보냄
