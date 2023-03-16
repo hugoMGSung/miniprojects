@@ -45,6 +45,7 @@ class Dino: # 공룡 클래스
             self.dino_run = False
             self.dino_duck = False
             self.dino_jump = True
+            self.dino_rect.y = self.Y_POS # 찾았다!!!
         elif userInput[pygame.K_DOWN] and not self.dino_jump: # 수구리
             self.dino_run = False
             self.dino_duck = True
@@ -73,6 +74,7 @@ class Dino: # 공룡 클래스
         if self.dino_jump:
             self.dino_rect.y -= self.jump_vel * 4
             self.jump_vel -= 0.8
+
         if self.jump_vel < -self.JUMP_VEL: # -9.0이 되면 점프중단
             self.dino_jump = False
             self.jump_vel = self.JUMP_VEL # 9.0으로 초기화
