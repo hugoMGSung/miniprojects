@@ -172,6 +172,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>btnPush</tabstop>
+  <tabstop>btnPop</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
