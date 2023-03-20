@@ -85,8 +85,3 @@
   - 16개 signal을 1개 slot함수로 처리
 
 <img src="https://raw.githubusercontent.com/hugoMGSung/miniprojects/main/images/calculator.png" width="250" />
-
-## 미니프로젝트 실습
-- 테스트앱 만들기
-
-[팀리포지토리](https://github.com/Hugos-IoT/test-bank)
