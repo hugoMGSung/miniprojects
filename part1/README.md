@@ -72,6 +72,13 @@
 
 게임화면
 
+- 전국대학교 위치맵
+  - Pandas
+  - folium
+  - PyQt
+    - QWebEnginView 추가
+    
+<img src="https://raw.githubusercontent.com/hugoMGSung/miniprojects/main/images/folium_gui.png" width="780" /> 
 
 ## 미니프로젝트 실습
 - 테스트앱 만들기
