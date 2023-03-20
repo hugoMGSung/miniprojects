@@ -7,7 +7,8 @@ pygame.init()
 
 ASSETS = './studyPyGame/Assets/' 
 SCREEN_WIDTH = 1100 # 게임 윈도우 넓이
-SCREEN = pygame.display.set_mode((SCREEN_WIDTH, 600)) 
+SCREEN_HEIGHT = 600
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) 
 icon = pygame.image.load('./studyPyGame/dinoRun2.png')
 pygame.display.set_icon(icon)
 # 배경이미지 로드
@@ -18,6 +19,8 @@ RUNNING = [pygame.image.load(f'./studyPyGame/Assets/Dino/DinoRun1.png'),
 DUCKING = [pygame.image.load(f'{ASSETS}Dino/DinoDuck1.png'),
            pygame.image.load(f'{ASSETS}Dino/DinoDuck2.png')] # Dodge
 JUMPING = pygame.image.load(f'{ASSETS}Dino/DinoJump.png')
+START = pygame.image.load(f'{ASSETS}Dino/DinoStart.png') # 첫시작 이미지
+DEAD = pygame.image.load(f'{ASSETS}Dino/DinoDead.png') # 죽음 이미지
 # 구름이미지
 CLOUD = pygame.image.load(f'{ASSETS}Other/Cloud.png')
 # 익룡이미지 로드
@@ -153,7 +156,7 @@ class SmallCactus(Obstacle):
         self.rect.y = 325
 
 def main():
-    global game_speed, x_pos_bg, y_pos_bg, points, obstacles
+    global game_speed, x_pos_bg, y_pos_bg, points, obstacles, font
     x_pos_bg = 0 
     y_pos_bg = 380
     points = 0 # 게임점수
@@ -163,6 +166,7 @@ def main():
     cloud = Cloud() # 구름객체 생성
     game_speed = 14
     obstacles = [] # 장애물 리스트
+    death_count = 0 
 
     font = pygame.font.Font(f'{ASSETS}NanumGothicBold.ttf', 20) # 나중에 나눔고딕으로 변경
 
@@ -187,7 +191,6 @@ def main():
             x_pos_bg = 0
 
         x_pos_bg -= game_speed
-
 
     while run:
         for event in pygame.event.get():
@@ -217,12 +220,48 @@ def main():
         for obs in obstacles:
             obs.draw(SCREEN)
             obs.update()
-            # Collision Detection
+            # Collision Detection 충돌감지
             if dino.dino_rect.colliderect(obs.rect):
-                pygame.draw.rect(SCREEN, (255,0,0), dino.dino_rect, 3)
+                # pygame.draw.rect(SCREEN, (255,0,0), dino.dino_rect, 3)
+                pygame.time.delay(1500) # 1.5초
+                death_count += 1 # 죽음
+                menu(death_count) # 메인 메뉴화면으로 전환
 
         clock.tick(30) # 30기본 60이면 빨라짐
         pygame.display.update() # 초당 30번 update 수행
 
+def menu(death_count): # 메뉴함수
+    global points, font
+    run = True
+    font = pygame.font.Font(f'{ASSETS}NanumGothicBold.ttf', 20)
+
+    while run:
+        SCREEN.fill((255,255,255))
+
+        if death_count == 0: # 최초
+            text = font.render('시작하려면 아무키나 누르세요', True, (83,83,83))
+            SCREEN.blit(START, (SCREEN_WIDTH // 2 - 20, SCREEN_HEIGHT // 2 - 140))    
+        elif death_count > 0: # 죽음
+            text = font.render('재시작하려면 아무키나 누르세요', True, (83,83,83))
+            score = font.render(f'SCORE : {points}', True, (83,83,83))
+            scoreRect = score.get_rect()
+            scoreRect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50)
+            SCREEN.blit(score, scoreRect)
+            SCREEN.blit(DEAD, (SCREEN_WIDTH // 2 - 20, SCREEN_HEIGHT // 2 - 140))    
+
+        textRect = text.get_rect()
+        textRect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+        SCREEN.blit(text, textRect) 
+        
+        pygame.display.update()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                pygame.quit() # 완전 종료
+            if event.type == pygame.KEYDOWN:
+                main()
+
+
 if __name__ == '__main__':
-    main()
+    menu(death_count=0)
