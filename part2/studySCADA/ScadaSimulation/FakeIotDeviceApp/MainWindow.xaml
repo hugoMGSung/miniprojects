@@ -25,7 +25,8 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Label Content="MQTT Broker IP Address" VerticalAlignment="Center" />
             <TextBox x:Name="TxtMqttBrokerIp" Width="250" Margin="5" VerticalAlignment="Center"
-                     mah:TextBoxHelper.Watermark="브로커 아이피를 입력하세요"  />
+                     mah:TextBoxHelper.Watermark="브로커 아이피를 입력하세요"
+                     Text="127.0.0.1" />
             <Button x:Name="BtnConnect" Content="CONNECT" Margin="5"
                     Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}" Click="BtnConnect_Click"/>
         </StackPanel>
