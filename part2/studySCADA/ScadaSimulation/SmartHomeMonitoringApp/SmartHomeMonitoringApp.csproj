@@ -242,6 +242,9 @@
     <Compile Include="Views\RealTimeControl.xaml.cs">
       <DependentUpon>RealTimeControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\VisualizationControl.xaml.cs">
+      <DependentUpon>VisualizationControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -263,6 +266,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RealTimeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VisualizationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
