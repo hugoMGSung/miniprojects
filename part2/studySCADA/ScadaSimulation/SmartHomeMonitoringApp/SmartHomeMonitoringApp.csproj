@@ -233,6 +233,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Logics\Commons.cs" />
+    <Compile Include="Models\Division.cs" />
     <Compile Include="Views\DataBaseControl.xaml.cs">
       <DependentUpon>DataBaseControl.xaml</DependentUpon>
     </Compile>

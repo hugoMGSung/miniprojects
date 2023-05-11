@@ -5,10 +5,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+    xmlns:oxy="http://oxyplot.org/wpf"
     xmlns:local="clr-namespace:SmartHomeMonitoringApp.Views"
     mc:Ignorable="d" 
-    d:DesignHeight="450" d:DesignWidth="800">
+    d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -35,16 +35,18 @@
                 <ComboBox x:Name="CboRoomName" Width="100" FontSize="14" VerticalAlignment="Center"
                           Style="{StaticResource MahApps.Styles.ComboBox}"/>
                 <Label Content="검색 시작일" VerticalAlignment="Center" FontSize="14" Margin="10,0,5,0" />
-                <DatePicker x:Name="DtpStart" Width="100" FontSize="14" VerticalAlignment="Center"
+                <DatePicker x:Name="DtpStart" Width="110" FontSize="14" VerticalAlignment="Center"
                             Style="{StaticResource MahApps.Styles.DatePicker}"/>
                 <Label Content="~ 검색 종료일" VerticalAlignment="Center" FontSize="14" Margin="10,0,5,0" />
-                <DatePicker x:Name="DtpEnd" Width="100" FontSize="14" VerticalAlignment="Center" />
+                <DatePicker x:Name="DtpEnd" Width="110" FontSize="14" VerticalAlignment="Center" />
             </StackPanel>
 
-            <Button Grid.Column="2" Content="검색" Margin="10,10" Width="80" 
-                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" />
+            <Button Grid.Column="2" x:Name="BtnSearch" Content="검색" Margin="10,10" Width="80" 
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnSearch_Click" />
         </Grid>
 
-        <lvc:CartesianChart Grid.Row="2" Margin="10"/>
+        <oxy:PlotView Grid.Row="2" Margin="10" Background="Gainsboro">
+            
+        </oxy:PlotView>
     </Grid>
 </UserControl>

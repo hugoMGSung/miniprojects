@@ -22,6 +22,9 @@ namespace FakeIotDeviceApp
         MqttClient Client { get; set; }
         Thread MqttThread { get; set; }
 
+        // MQTT Publish json 데이터 건수 체크변수
+        int MaxCount { get; set; } = 50;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -72,9 +75,17 @@ namespace FakeIotDeviceApp
                     Client.Publish("SmartHome/IoTData/", Encoding.Default.GetBytes(jsonValue));
                     // 스레드와 UI스레드간 충돌이 안나도록 변경
                     this.Invoke(new Action(() => {
+                        if (MaxCount <= 0)
+                        {
+                            RtbLog.SelectAll();
+                            RtbLog.Selection.Text = string.Empty;
+                            MaxCount = 50;
+                            RtbLog.AppendText(">>> 문서건수가 많아져서 초기화.\n");
+                        }
                         // RtbLog에 출력                        
                         RtbLog.AppendText($"{jsonValue}\n");
                         RtbLog.ScrollToEnd(); // 스크롤 제일 밑으로 보내기
+                        MaxCount--;                        
                     }));
                     
                     // 1초동안 대기
