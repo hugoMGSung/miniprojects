@@ -8,7 +8,7 @@
 	- Bogus(더미데이터 생성 라이브러리)
 	- Newtonsoft.json
 	- M2Mqtt(통신 라이브러리)
-	- DB 데이터바인딩
+	- DB 데이터바인딩(MySQL)
 	- LiveCharts
 	- OxyPlot
 
