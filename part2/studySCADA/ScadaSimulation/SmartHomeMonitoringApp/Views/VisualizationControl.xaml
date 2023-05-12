@@ -41,12 +41,14 @@
                 <DatePicker x:Name="DtpEnd" Width="110" FontSize="14" VerticalAlignment="Center" />
             </StackPanel>
 
+            <Label Grid.Column="1" x:Name="LblTotalCount" Content="검색데이터 0개" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"  />
+
             <Button Grid.Column="2" x:Name="BtnSearch" Content="검색" Margin="10,10" Width="80" 
                     Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnSearch_Click" />
         </Grid>
 
-        <oxy:PlotView Grid.Row="2" Margin="10" Background="Gainsboro">
-            
+        <oxy:PlotView Grid.Row="2" x:Name="OpvSmartHome" Margin="10" Background="Gainsboro">            
         </oxy:PlotView>
     </Grid>
 </UserControl>
