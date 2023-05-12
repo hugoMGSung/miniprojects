@@ -29,4 +29,6 @@
 
 <img src="https://raw.githubusercontent.com/hugoMGSung/miniprojects/main/images/smarthome_monitor2.png" width="780" />
 
-	
+스마트홈 모니터링앱 테마적용
+
+<img src="https://raw.githubusercontent.com/hugoMGSung/miniprojects/main/images/smarthome_monitor3.gif" width="780" />	

@@ -74,6 +74,32 @@
                     <MenuItem.Icon>
                         <iconPacks:PackIconRemixIcon Kind="Brush2Fill" />
                     </MenuItem.Icon>
+
+                    <MenuItem Header="테마">
+                        <MenuItem x:Name="MnuLightTheme" Header="Light" IsChecked="True" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuDarkTheme" Header="Dark" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked" />
+                    </MenuItem>
+
+                    <MenuItem Header="액센트">
+                        <MenuItem x:Name="MnuAccentAmber" Header="Amber" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentBlue" Header="Blue" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentBrown" Header="Brown" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentCobalt" Header="Cobalt" IsChecked="True" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentCrimson" Header="Crimson" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentCyan" Header="Cyan" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentEmerald" Header="Emerald" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentGreen" Header="Green" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentIndigo" Header="Indigo" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentLime" Header="Lime" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentMagenta" Header="Magenta" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentMauve" Header="Mauve" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentOlive" Header="Olive" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentOrange" Header="Orange" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentPurple" Header="Purple" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentRed" Header="Red" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentSienna" Header="Sienna" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                        <MenuItem x:Name="MnuAccentSteel" Header="Steel" IsChecked="False" IsCheckable="True" Click="MnuThemeAccent_Checked"/>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="도움말">
                     <MenuItem.Icon>
