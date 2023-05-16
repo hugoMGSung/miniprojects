@@ -110,7 +110,7 @@ namespace FakeIotDeviceApp
 
             MqttClient = mqttFactory.CreateMqttClient();
             var mqttClientOptions = new MqttClientOptionsBuilder()
-                .WithTcpServer(TxtMqttBrokerIp.Text).Build();
+                .WithTcpServer(TxtMqttBrokerIp.Text).WithCredentials("root", "12345").Build();
 
             await MqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
             UpdateText("MQTT Connected!");
