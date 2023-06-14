@@ -1,0 +1,64 @@
+﻿<UserControl 
+    x:Class="SmartHomeMonitoringApp.Views.DataBaseControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:SmartHomeMonitoringApp.Views"
+    mc:Ignorable="d"
+    d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <iconPacks:PackIconOcticons Kind="Database" Margin="10" Width="24" Height="24"
+                                        VerticalAlignment="Center"/>
+            <Label Content="DataBase Monitoring" Style="{StaticResource MahApps.Styles.Label}"
+                   FontSize="25" FontWeight="Bold" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="MQTT Broker URL"
+                   FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="MQTT Topic"
+                   FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="DB Connection String"
+                   FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Connecting"
+                   FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Logs"
+                   FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right"
+                   Margin="0,10"/>
+            
+
+            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="TxbBrokerUrl" Text="Sample Broker IP"
+                       FontSize="14" VerticalAlignment="Center" Margin="10,0"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="TxbMqttTopic" Text="Sample Topic"
+                       FontSize="14" VerticalAlignment="Center" Margin="10,0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="TxtConnString" Text="MySQL 연결문자열"
+                       FontSize="14" VerticalAlignment="Center" Margin="10,0"/>
+            <ToggleButton Grid.Row="3" Grid.Column="1" x:Name="BtnConnDb" Content="Connect"
+                          Width="150" HorizontalAlignment="Left" Margin="10,5" IsChecked="False"
+                          Style="{StaticResource MahApps.Styles.ToggleButton.Flat}" Click="BtnConnDb_Click" />
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="TxtLog" Margin="10, 5"
+                     TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" FontSize="12" />
+        </Grid>
+
+    </Grid>
+</UserControl>
