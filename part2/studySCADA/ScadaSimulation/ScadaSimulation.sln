@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RaspberryPi 연결 테스�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RpiMonitoringApp", "RpiMonitoringApp\RpiMonitoringApp.csproj", "{77BA4977-240B-42A1-9940-0BC36B1D9706}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHomeMonitor", "SmartHomeMonitor\SmartHomeMonitor.csproj", "{83886C62-3C19-4079-BDB1-6116075DD07E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{77BA4977-240B-42A1-9940-0BC36B1D9706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77BA4977-240B-42A1-9940-0BC36B1D9706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77BA4977-240B-42A1-9940-0BC36B1D9706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83886C62-3C19-4079-BDB1-6116075DD07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83886C62-3C19-4079-BDB1-6116075DD07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83886C62-3C19-4079-BDB1-6116075DD07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83886C62-3C19-4079-BDB1-6116075DD07E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{DBB07988-7B84-45C3-98FD-33F9DB4FA41A} = {D6D08109-F669-4A19-A374-483F8657EF79}
 		{138A8A70-AB55-4646-AA8A-9DC4FDA55554} = {5950490C-4C25-4031-8676-B2613D4680E4}
 		{77BA4977-240B-42A1-9940-0BC36B1D9706} = {433C6A5B-8E55-4E27-9224-9B458D1E57DE}
+		{83886C62-3C19-4079-BDB1-6116075DD07E} = {D6D08109-F669-4A19-A374-483F8657EF79}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {784C82A6-BBF6-4B8A-8ED8-231158AC03F3}
